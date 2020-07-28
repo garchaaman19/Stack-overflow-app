@@ -7,14 +7,14 @@
 #### To run the app use command python3 manage.py runserver, localhost:8000 will be started where you can use the app.
 
 - Available tags 
-  -*page=n*
-  -*pagesize=n*
-  -*user=23181*
-  -*title=some title to search for*
-  -*accepted=true/false*
-  -*closed=true/false*
-  -*q=some question to search for*
-  -*tagged=to specify any tag along with question*
+  - *page=n*
+  - *pagesize=n*
+  - *user=23181*
+  - *title=some title to search for*
+  - *accepted=true/false*
+  - *closed=true/false*
+  - *q=some question to search for*
+  - *tagged=to specify any tag along with question*
   
   - Examples on how to use it.
 - 1. q= How to merge two lists in python,tagged=python.
