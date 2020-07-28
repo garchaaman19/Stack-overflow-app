@@ -4,7 +4,7 @@
 ## This app is a clone of Stackoverflow, It uses stackexchange api to retrieve the results, It allows user to search and fetch questions directly.
 
 ### Usage
--To run the app use command python3 manage.py runserver, localhost:8000 will be started where you can use the app.
+#### To run the app use command python3 manage.py runserver, localhost:8000 will be started where you can use the app.
 
 - Available tags 
   -*page=n*
