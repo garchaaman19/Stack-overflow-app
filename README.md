@@ -16,7 +16,7 @@
   - *q=some question to search for*
   - *tagged=to specify any tag along with question*
   
-  - Examples on how to use it.
+##### Examples on how to use it.
 - 1. q= How to merge two lists in python,tagged=python.
 - 2. tagged=python.
 - 3. q= How to secure REST,tagged=java;python,answered=10.
