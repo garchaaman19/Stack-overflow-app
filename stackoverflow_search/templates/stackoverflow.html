@@ -1,0 +1,61 @@
+{%extends "base.html" %}
+{% block title %}
+StackOverflow
+{% endblock title %}
+{% block content %}
+
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+</style>
+{%if data %}
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8 mt-3 left">
+                {% for key,value in data %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ value.title }}</h2>
+                        <p class="card-text text-muted h6">{{ value.creation_date }} </p>
+                        <p class="card-text text-muted h6"> Asked By</p>
+                        <a href="{{value.owner_link}}">{{value.display_name }} </a>
+                        <p class="card-text"></p>
+                        <a href="{{value.link}}" class="btn btn-primary">Read More &rarr;</a>
+
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+    <div class="pagination">
+        <span class="page-links">
+            <span class="page-current">
+                Page {{ data.number }} of {{ data.paginator.num_pages }}.
+            </span>
+            {% if data.has_next %}
+                <a class="pagination-action" href="?page={{ data.next_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">next</a>
+            {% endif %}
+            {% if data.has_previous %}
+                <a class="pagination-action" href="?page={{ data.previous_page_number }}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+{% else %}
+    <h3>No Results found :(</h3>
+{% endif %}
+{% endblock content %}

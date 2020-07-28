@@ -1,0 +1,69 @@
+{%extends "base.html" %}
+{% block title %}
+StackOverflow
+{% endblock title %}
+{% block content %}
+
+<style>
+    body {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;.SearchBar input {
+     height: 30px;
+     width: 50px;
+}
+        background-color: #fdfdfd;
+    }
+
+    .head_text {
+        color: white;
+    }
+
+    .card {
+        box-shadow: 0 16px 48px #E3E7EB;
+    }
+    #search{
+        height: 30px;
+        width: 450px;
+
+    }
+
+</style>
+
+
+
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> <marquee>Please follow the Instructions for accurate results</marquee> </h3>
+                    <p class="text-dark">Examples on how to search
+                    </p>
+                    <p class="text-dark">Please separate the parameters with (,) <strong>ex: q=how to reverse string,tagged=python,answers=3 &nbsp</strong>
+                    </p>
+                    <p class="text-light">q= To search some question,<strong> ex:- q=how to add two strings in python</strong>
+                        <br>tagged=To add tags, if multiple separate with (;) <strong> ex:-tagged=python;java;cpp.</strong> &nbsp </br>
+                        <br>user=1234, to specify user id.</br>
+                        <br>title=how to add two strings in python, to specify title.</br>
+                        <br>answers=2, to search for question with minimum x answers.</br>
+
+                    </p>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="card my-6 border-info">
+    <form action="{% url 'search' %}" method="get">
+    <input id="search" type="text" placeholder="q=how to reverse a string,tagged=python" name="search" required>
+        <button type="submit">search &rarr;</button>
+        <!--<a href="{% url 'search' %}" >Search &rarr;</a>-->
+    </form>
+
+</div>
+
+{% endblock content %}
